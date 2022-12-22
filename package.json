@@ -1,0 +1,48 @@
+{
+  "name": "@fancysofthq/supaapi",
+  "version": "0.1.0-rc1",
+  "description": "Common code for backend application",
+  "author": {
+    "name": "Fancy Software",
+    "url": "http://fancysoft.eth"
+  },
+  "repository": "git+https://github.com/fancysofthq/supaapi.git",
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "type": "module",
+  "engines": {
+    "node": "^18.0",
+    "npm": "^8.0"
+  },
+  "scripts": {
+    "clean": "rm -r dist",
+    "build": "tsc && resolve-tspaths --src ."
+  },
+  "dependencies": {
+    "@fancysofthq/supabase": "0.4.1-rc1",
+    "better-sqlite3": "^8.0.1",
+    "ethers": "^5.7.2",
+    "p-retry": "^5.1.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.3",
+    "@types/node": "^18.11.9",
+    "resolve-tspaths": "^0.8.3",
+    "typescript": "^4.9.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./eth/event-sync": "./dist/event-sync.js"
+  },
+  "typesVersions": {
+    "*": {
+      "eth/event-sync": [
+        "dist/event-sync.d.ts"
+      ]
+    }
+  }
+}
